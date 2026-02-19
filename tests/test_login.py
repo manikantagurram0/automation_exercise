@@ -13,6 +13,5 @@ def test_signup(driver):
 def test_account_information(driver):
      obj=create_account(driver)
      obj.enter_account_information()
-     assert "3" in driver.page_source
-     assert "July" in driver.page_source
-     assert "2000" in driver.page_source
+     assert "Account Created!" in driver.page_source
+     
