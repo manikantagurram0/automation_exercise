@@ -51,7 +51,11 @@ class create_account:
             element_year=self.wait.until(EC.visibility_of_element_located(self.year))
             select=Select(element_year)
             select.select_by_visible_text("2000")
+
+            self.driver.execute_script("window.scrollBy(0,500)")
+            self.driver.execute_script("arguments[0].scrollIntoView({block:'center'});",element_year)  
             time.sleep(10)
+
             #-----------------------------------------------------------------------------------------------------
         except Exception as E:
             print("error in entering account details")
